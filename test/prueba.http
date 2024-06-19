@@ -1,0 +1,46 @@
+### Loguear usuario
+POST http://localhost:3000/user/login
+Content-Type: application/json
+
+{
+  "dni": "36355678",
+  "password": "123456"
+}
+
+### Crear usuario
+POST http://localhost:3000/user/usersp
+Content-Type: application/json
+
+{
+  "nombre": "Juan",
+  "dni": "36355678",
+  "correo": "correoses",
+  "password": "123456"
+}
+
+### Obtener lista de materias (protegido por token)
+GET http://localhost:3000/user/getData
+mani: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzNjM1NTY3OCIsImlhdCI6MTcxNjkwODE5MSwiZXhwIjoxNzE2OTA5MDkxfQ.EcAmGFX1jP0EurLR_JJ9i106p1WdBO8uf_o37B4SE2c
+
+### Agregar una nueva materia (protegido por token)
+POST http://localhost:3000/user/addMateria
+Content-Type: application/json
+mani: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzNjM1NTY3OCIsImlhdCI6MTcxNjkwODE5MSwiZXhwIjoxNzE2OTA5MDkxfQ.EcAmGFX1jP0EurLR_JJ9i106p1WdBO8uf_o37B4SE2c
+
+{
+  "nombre_materia": "Matemáticas"
+}
+
+### Relacionar un usuario con una materia (protegido por token)
+POST http://localhost:3000/user/cursar
+Content-Type: application/json
+mani: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzNjM1NTY3OCIsImlhdCI6MTcxNjkwODE5MSwiZXhwIjoxNzE2OTA5MDkxfQ.EcAmGFX1jP0EurLR_JJ9i106p1WdBO8uf_o37B4SE2c
+
+{
+  "dni": "36355678",
+  "idMateria": 1
+}
+
+### Obtener materias cursadas por un alumno (protegido por token)
+GET http://localhost:3000/user/getMateriaById/36355678
+mani: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzNjM1NTY3OCIsImlhdCI6MTcxNjkwODE5MSwiZXhwIjoxNzE2OTA5MDkxfQ.EcAmGFX1jP0EurLR_JJ9i106p1WdBO8uf_o37B4SE2c
